@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #bcbfe8;
+  background-color: #d0afad;
   font-family: 'Poppins', sans-serif;
   color: #474442;
 }
@@ -43,6 +43,7 @@ h3 {
 h4 {
   text-align: center;
   font-size: 28px;
+  margin-top: 0
 }
 
 h5 {
@@ -71,11 +72,14 @@ section {
 .potential {
   display: block;
   text-align: center;
+  background-color: #bcbfe8;
+  margin-bottom: 50px;
 }
 
 .profile {
   border-bottom: 2px solid #343e40;
   padding-bottom: 1rem;
+  background-color: #bcbfe8;
 }
 
 nav {
@@ -92,4 +96,13 @@ a, a:link, a:visited {
   box-shadow: 2px 2px 2px #bcbfe8;
   padding: 0 0.5rem 0 0.5rem;
   color: #343e40
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 50px;
+  background-color: lemonchiffon;
+  margin-top: 50px;
 }

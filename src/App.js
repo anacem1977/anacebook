@@ -16,7 +16,7 @@ class App extends Component {
         name: "Anacé Maldonado",
         username: "anace",
         image: "https://i.imgur.com/0rQjeLK.jpg",
-        friendList: ["Nat", "Fer"]
+        friendList: ["Nat", "Fer", "Valentina", "Maggie", "Chucha"]
       },
       apiDataLoaded: false,
       potentialFriends: []
@@ -63,7 +63,7 @@ class App extends Component {
         <Route path="/users" render={() => (
           <FriendsPage potentialFriends = {this.state.potentialFriends}/>
         )} />
-
+      <footer>This is my footer</footer>
       </div>
     );
   }
