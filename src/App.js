@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import { Router, Link } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 
 import './App.css';
 
@@ -41,7 +41,6 @@ class App extends Component {
     ]
     this.setState({
       potentialFriends: allFriends,
-      apiDataLoaded: true,
     })
   }
 
@@ -49,13 +48,21 @@ class App extends Component {
     return (
       //console.log(this.state.potentialFriends),
       <div className="App">
-        <header>
-          <h1>AnacéBook</h1>
-        </header>
-        <Profile user={this.state.user} />
-        { this.state.apiDataLoaded
-          ? <div><FriendsPage potentialFriends = {this.state.potentialFriends}/></div>
-          : <p>... Loading ...</p>}
+
+        <nav>
+          <Link to = "/">Profile</Link>
+          <Link to = "/users">Users</Link>
+        </nav>
+        
+        <header><h1>AnacéBook</h1></header>
+
+        <Route path="/" render={() => (
+          <Profile user={this.state.user} />
+        )} />
+        <Route path="/users" render={() => (
+          <FriendsPage potentialFriends = {this.state.potentialFriends}/>
+        )} />
+
       </div>
     );
   }

@@ -68,5 +68,9 @@ section {
 .potential {
   display: block;
   text-align: center;
+}
 
+.profile {
+  border-bottom: 1px solid #343e40;
+  padding-bottom: 1rem;
 }
