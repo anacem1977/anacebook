@@ -2,7 +2,7 @@ import React from "react";
 
 const Profile = (props) => {
     return (
-        <div>
+        <div className="profile">
             <img src={props.user.image} />
             <section>
                 <h2>Welcome {props.user.name}</h2>
