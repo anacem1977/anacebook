@@ -17,11 +17,14 @@ img {
   margin: 2rem 0 0 2rem;
 }
 
-header {
+header, nav {
   background-color: #d0afad;
-  padding: 1rem;
   text-align: right;
+}
+
+header {
   border-bottom: 1px solid #343e40;
+  padding: 1rem;
 }
 
 h1 {

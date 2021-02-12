@@ -56,9 +56,10 @@ class App extends Component {
         
         <header><h1>AnacéBook</h1></header>
 
-        <Route path="/" render={() => (
+        <Route exact path="/" render={() => (
           <Profile user={this.state.user} />
         )} />
+
         <Route path="/users" render={() => (
           <FriendsPage potentialFriends = {this.state.potentialFriends}/>
         )} />
