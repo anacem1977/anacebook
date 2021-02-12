@@ -13,7 +13,7 @@ class App extends Component {
         name: "Anacé Maldonado",
         username: "anace",
         image: "https://i.imgur.com/0rQjeLK.jpg",
-        firendList: []
+        friendList: ["Nat", "Fer"]
       },
       apiDataLoaded: false,
       potentialFriends: []
@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>AnacéBook</h1>
-        <Profile />
+        <Profile user={this.state.user} />
       </div>
     );
   }
