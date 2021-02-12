@@ -2,12 +2,10 @@ import React from "react";
 
 const FriendsPage = (props) => {
     return (
-        console.log(props),
+        //console.log(props),
         <div>
-            <h2>This is my potential friend</h2>
-            <p>{props.potentialFriends.first} {props.potentialFriends.last}</p>
+            <h4>{props.potentialFriends.first} {props.potentialFriends.last} could be your friend!</h4>
         </div>
-
     )
 }
 
