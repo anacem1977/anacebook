@@ -10,7 +10,7 @@ const Profile = (props) => {
             </section>
             
             <h3 className="friends">These are your friends:</h3>
-            {props.user.friendList.map(friend => <p  className="friends">{friend}</p>)}
+            {props.user.friendList.map(friend => <p  className="friends">{friend.name.first} {friend.name.last}</p>)}
         </div>
 
     )

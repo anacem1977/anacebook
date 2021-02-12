@@ -16,7 +16,7 @@ class App extends Component {
         name: "Anacé Maldonado",
         username: "anace",
         image: "https://i.imgur.com/0rQjeLK.jpg",
-        friendList: ["Nat", "Fer", "Valentina", "Maggie", "Chucha"]
+        friendList: []
       },
       apiDataLoaded: false,
       potentialFriends: []
@@ -44,24 +44,44 @@ class App extends Component {
     })
   }
 
+  addFriend = (newFriend) => {
+    const currentFriends = this.state.user;
+    currentFriends.friendList.push(newFriend);
+
+    const potentialFriends = this.state.potentialFriends;
+    const newPotentialFriends = potentialFriends.filter(friend => {
+      return newFriend.login.uuid !== friend.login.uuid
+    })
+    console.log(newPotentialFriends);
+
+    this.setState ({
+      user: currentFriends,
+      potentialFriends: newPotentialFriends
+    })
+  }
+
   render() {
     return (
       //console.log(this.state.potentialFriends),
       <div className="App">
-
-        <nav>
-          <Link to = "/">Profile</Link>
-          <Link to = "/users">Users</Link>
-        </nav>
         
-        <header><h1>AnacéBook</h1></header>
+        <header>
+          <nav>
+            <Link to = "/">Profile</Link>
+            <Link to = "/users">Users</Link>
+          </nav>
+          <h1>AnacéBook</h1>
+        </header>
 
         <Route exact path="/" render={() => (
           <Profile user={this.state.user} />
         )} />
 
         <Route path="/users" render={() => (
-          <FriendsPage potentialFriends = {this.state.potentialFriends}/>
+          <FriendsPage 
+            potentialFriends = {this.state.potentialFriends}
+            addFriend = {this.addFriend}  
+          />
         )} />
       <footer>This is my footer</footer>
       </div>

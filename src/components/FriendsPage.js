@@ -10,6 +10,7 @@ const FriendsPage = (props) => {
                     <h5>{friend.name.first} {friend.name.last}</h5>
                     <img className="thumb" src={friend.picture.thumbnail} />
                     <p>{friend.login.username}</p>
+                    <button onClick={() => props.addFriend(friend)}>Add Friend</button>
                 </div>
                 )}
         </div>
