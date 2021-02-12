@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios';
 
 import './App.css';
 
@@ -21,13 +22,23 @@ class App extends Component {
     }
   }
 
+  componentDidMount = async () => {
+    const newFriend = await axios.get("https://randomuser.me/api/");
+    this.setState({
+      potentialFriends: newFriend.data.results[0].name,
+      apiDataLoaded: true,
+    })
+  }
 
   render() {
     return (
+      //console.log(this.state.potentialFriends),
       <div className="App">
         <h1>AnacéBook</h1>
         <Profile user={this.state.user} />
-        <FriendsPage />
+        { this.state.apiDataLoaded
+          ? <div><FriendsPage potentialFriends = {this.state.potentialFriends}/></div>
+          : <p>... Loading ...</p>}
       </div>
     );
   }
